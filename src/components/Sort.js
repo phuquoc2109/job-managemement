@@ -26,7 +26,7 @@ class Sort extends Component {
                             <a 
                               role="button" 
                               className={(this.props.sortBy === 'name' && this.props.sortValue === 1) 
-                              ? 'sort_selected' : ''}
+                              ? 'sort_selected ' : ''}
                              >
                               
                                 <span className="fas fa-sort-alpha-down mr-5">

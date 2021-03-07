@@ -10,7 +10,7 @@ class Control extends Component {
               {/*Sort*/}
                 <Sort 
                 onSort={this.props.onSort}
-                sorrBy={this.props.sorrBy}
+                sortBy={this.props.sortBy}
                 sortValue={this.props.sortValue}
                 />
           </div>

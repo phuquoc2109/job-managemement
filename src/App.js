@@ -156,7 +156,7 @@ class App extends Component {
     onSort = (sortBy, sortValue) =>{
         this.setState({
             sortBy : sortBy,
-            sortByValue: sortValue
+            sortValue: sortValue
         })
     }
 
@@ -188,7 +188,19 @@ class App extends Component {
                  return task.name.toLowerCase().indexOf(keyword) !== -1; 
             });
         }
-        console.log(sortBy, '-',sortValue);
+        if(sortBy === 'name'){
+            tasks.sort((a, b) => {
+                if(a.name > b.name) return sortValue;
+                if(a.name < b.name) return -sortValue;
+                else return 0;
+            })
+        }else{
+                tasks.sort((a, b) => {
+                if(a.status > b.status) return -sortValue;
+                if(a.status < b.status) return sortValue;
+                else return 0;
+            })
+        }
         var elmTaskForm = isDisplayForm === true ? 
             <TaskForm 
             onSubmit={this.onSubmit} 
